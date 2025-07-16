@@ -93,30 +93,37 @@
   </tr>
 </table>
 
+
+
 ---
+## 📱 Download APK
 
+👉 [Download the latest APK](https://github.com/Zuhayer-Tajbid/Teacher-s-Aid/releases/tag/v1.0.0)
 
+---
 
 
 
 # 🛠️ Tech Stack
 
-Flutter – For cross-platform mobile development
+- **Flutter** – For cross-platform mobile development
 
-Dart – Primary programming language
+- **Dart** – Primary programming language
 
-flutter_local_notifications – To schedule reminders
+- **flutter_local_notifications** – To schedule reminders
 
-SharedPreferences / Map – For lightweight local storage
+- **SharedPreferences / Map** – For lightweight local storage
 
-
+---
 # 📦 Dependencies
 
+```yaml
 dependencies:
   flutter:
   flutter_local_notifications: ^9.6.1
   shared_preferences: ^2.2.1
 
+---
 # 🙏 Acknowledgements
 
 This app was developed as part of the Software Development Project I course (CSE 2100). The idea was inspired by real-world teaching challenges and aims to improve efficiency in educational institutions.
