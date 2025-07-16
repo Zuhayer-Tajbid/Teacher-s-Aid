@@ -1,0 +1,73 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.practice"
+    compileSdk 35
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        multiDexEnabled true
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId = "com.example.practice"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        minSdkVersion 21
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+       
+    }
+    signingConfigs {
+        release {
+            storeFile file("D:/flutter/practice/android/app/practice.jks")  // Path to your keystore file
+            storePassword "tajbid"
+            keyAlias "key"
+            keyPassword "tajbid"
+        }
+    }
+    buildTypes {
+        // release {
+        //     minifyEnabled true
+        //     proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        //     // TODO: Add your own signing config for the release build.
+        //     // Signing with the debug keys for now, so `flutter run --release` works.
+        //     signingConfig signingConfigs.debug
+           
+        // }
+        release {
+        signingConfig signingConfigs.release
+        // Enables code shrinking, obfuscation, and optimization for only
+        // your project's release build type.
+        minifyEnabled true
+
+        // Enables resource shrinking, which is performed by the
+        // Android Gradle plugin.
+        shrinkResources false
+
+        // Includes the default ProGuard rules files that are packaged with
+        // the Android Gradle plugin. To learn more, go to the section about
+        // R8 configuration files.
+        proguardFiles getDefaultProguardFile(
+                'proguard-android-optimize.txt'),
+                'proguard-rules.pro'
+    }
+    }
+}
+
+flutter {
+    source = "../.."
+}
